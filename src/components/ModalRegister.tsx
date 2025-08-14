@@ -74,7 +74,6 @@ export default function ModalRegister() {
     }
     return total;
   };
-  const discountOk = buyBottle && buyCap && buyShoes;
 
   // ----------------------------------------------------------------
 
@@ -189,7 +188,7 @@ export default function ModalRegister() {
                 Female 👩
                 {/* To show error when user did not select gender, */}
                 {/* We just have to render the div below (Not using isx -invalid bootstrap class) */}
-                <div className={genderError ?  "text-danger" : ""}>Please select gender</div>
+                <div className={genderError ?  "text-danger" : "d-none"}>Please select gender</div>
               </div>
             </div>
 
@@ -223,6 +222,7 @@ export default function ModalRegister() {
                 />
                 <label className="form-check-label">Cap 🧢 (400 THB)</label>
               </div>
+              <span className={(buyBottle&&buyCap&&buyShoes)?  "text-success d-block"  : "d-none" }>(20% Discounted)</span>
             </div>
 
             <div className="alert alert-primary mt-3" role="alert">
@@ -233,7 +233,6 @@ export default function ModalRegister() {
             <div>
               Total Payment : {computeTotalPayment().toLocaleString()} THB
               {/* Render below element conditionally when user get 20% discount */}
-              {discountOk && <span className={"text-success d-block" }>(20% Discounted)</span>}
             </div>
           </div>
           <div className="modal-footer">
