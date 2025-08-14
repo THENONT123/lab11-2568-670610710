@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { generatePath } from "react-router";
+// import { generatePath } from "react-router";
 export default function ModalRegister() {
   const [fname, setFname] = useState("");
   const [fnameError, setFnameError] = useState(false);
